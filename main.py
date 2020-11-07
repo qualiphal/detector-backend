@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request
+from flask_cors import CORS
 import torch.nn.functional as F
 import torch.optim as optim
 import torch.nn as nn
@@ -10,6 +11,7 @@ import numpy as np
 import base64
 
 app = Flask(__name__)
+CORS(app)
 UPLOAD_FOLDER = "static"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 DEVICE = "cpu"
